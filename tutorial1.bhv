@@ -1,0 +1,117 @@
+initialize  DEPLOY = false
+initialize  RETURN = false
+initialize  STATION_KEEP = false
+// has const depth and waypoint bhv and periodic surface
+set MODE = active{
+ DEPLOY = true
+ 
+}inactive
+
+set MODE = move{
+ MODE = active
+ RETURN != true
+}
+
+set MODE = return{
+MODE = active
+RETURN = true
+STATION_KEEP != true
+
+}stop
+
+Behavior = BHV_Waypoint
+{
+name = wpt_bhv_tutorial
+pwt = 100
+condition = MODE==returnmove
+updates = wpt_update
+perpetual = true
+lead = 8
+lead_damper= 1
+points = format=lawnmower,label=guideroad,x=80,y=-80,width=70,height=70,lane_width=15,row=north-south,deg=30
+speed = 3
+
+
+}
+Behavior = BHV_Waypoint
+{
+
+name=return
+pwt = 100
+condition = MODE==return
+updates = wpt_update
+perpetual = true
+lead = 8
+lead_damper= 1
+point= 0,0
+speed = 3
+
+
+}
+
+
+
+
+
+Behavior = BHV_Loiter
+ {
+   // General Behavior Parameters
+   // ---------------------------
+   name         = transit               // example
+   pwt          = 100                   // default
+   condition    = MODE==move      // example
+   updates      = LOITER_UPDATES        // example
+
+   // Parameters specific to this behavior
+   // ------------------------------------
+        acquire_dist = 10               // default
+      capture_radius = 3                // default  
+     center_activate = false            // default
+           clockwise = true             // default
+         slip_radius = 15               // default
+               speed = 3                // default
+       spiral_factor = -2               // default
+
+             polygon = radial:: x=8,y=8,radius=60,pts=12  // example
+         post_suffix = HENRY                             // example
+
+       center_assign = 150,-60            // example
+      xcenter_assign = 150               // example
+      ycenter_assign = -60               // example
+
+
+        visual_hints = vertex_size  = 1             // default
+        visual_hints = edge_size    = 1             // default
+        visual_hints = vertex_color = dodger_blue   // default
+        visual_hints = edge_color   = white         // default
+        visual_hints = nextpt_color = yellow        // default
+        visual_hints = nextpt_lcolor = aqua         // default
+        visual_hints = nextpt_vertex_size = 5       // default
+        visual_hints = label        = ATON         // example
+ }
+
+Behavior = BHV_StationKeep
+{
+  name      = station-keep
+  priority  = 100
+  condition = MODE==STATION-KEEPING
+
+  center_activate = true 
+     inner_radius = 5 
+     outer_radius = 10  
+      outer_speed = 1.0
+       swing_time = 10
+}
+
+Behavior = BHV_ConstantDepth
+{
+name = const_depth_beh_tutorial
+pwt = 100
+condition = MODE==active 
+
+updates = const_depth_update
+duration = no-time-limit
+depth = 20
+
+}
+
