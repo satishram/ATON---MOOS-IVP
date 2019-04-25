@@ -1,0 +1,60 @@
+initialize  DEPLOY = false
+initialize  RETURN = false
+// has const depth and waypoint bhv and periodic surface
+set MODE = active{
+ DEPLOY = true
+ 
+}inactive
+
+set MODE = move{
+ MODE = active
+ RETURN != true
+}
+
+set MODE = return{
+MODE = active
+RETURN = true
+}stop
+
+Behavior = BHV_Waypoint
+{
+name = wpt_bhv_tutorial
+pwt = 100
+condition = MODE==move
+updates = wpt_update
+perpetual = true
+lead = 8
+lead_damper= 1
+points = format=lawnmower,label=guideroad,x=80,y=-80,width=70,height=70,lane_width=15,row=north-south,deg=30
+speed = 3
+
+
+}
+Behavior = BHV_Waypoint
+{
+
+name=return
+pwt = 100
+condition = MODE==return
+updates = wpt_update
+perpetual = true
+lead = 8
+lead_damper= 1
+point= 0,0
+speed = 3
+
+
+}
+
+
+Behavior = BHV_ConstantDepth
+{
+name = const_depth_beh_tutorial
+pwt = 100
+condition = MODE==active 
+
+updates = const_depth_update
+duration = no-time-limit
+depth = 20
+
+}
