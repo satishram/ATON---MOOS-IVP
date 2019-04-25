@@ -25,7 +25,7 @@ updates = wpt_update
 perpetual = true
 lead = 8
 lead_damper= 1
-points = format=lawnmower,label=guideroad,x=80,y=-80,width=70,height=70,lane_width=15,row=north-south,deg=30
+points = format=lawnmower,label=guideroad,x=80,y=-80,width=70,height=30,lane_width=8,row=north-south,deg=30
 speed = 3
 
 
