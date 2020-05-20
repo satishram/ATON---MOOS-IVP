@@ -10,12 +10,12 @@ The basic system consist of surface and payload or underwater systems
 
 Both the systems have independent MOOS and BHV Source to communicate and transfer data between them where the surface being the master send information about navigation ,thrust and returns with the data from the payload about the position,heading,depth and others 
 
-ATON framework written for testing is been shared here for students to gain more knowledge and these code helps to connect the commands from MOOS IVP and Control the thrusters accordingly 
+ATON framework written for testing is been shared here for students/researchers to gain more knowledge and these code helps to connect the commands from MOOS IVP and Control the thrusters accordingly 
 
 Raspberry pi and Arduino Mega Been Used along with Topside Intel NUC With Blue Robotics ROV System 
 
 Pls feel free to reach us to know more at one2one@arobot.in 
 
-Currently we are working with Interfacing ATON MOOS IVP with Multibeam SOnar and Residential AUV/ROV development programs for Academics and Research 
+Current Research on Providing training and development on Remote and Autonomous Systems for Commercial and Research Market
 
-You can find more about the vehicle development at this youtube channel - https://www.youtube.com/watch?v=sSAItPEVJq0&t=187s 
+You can find more about the vehicle development at this youtube channel - https://www.youtube.com/watch?v=regAhK2Umeo
