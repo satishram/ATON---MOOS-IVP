@@ -1,5 +1,5 @@
-# ATON---MOOS-IVP
-Developing Marine Autonomous Framework with MOOS IVP along with ATON Development 
+# ATON---MOOS-IVP--Cloudonomous
+Developing Marine Autonomous Framework with MOOS IVP along with ATON Development and Drive data through Cloudonomous framework
 
 Learn more about the MOOS - IVP Framework from MIT Open Source License
 
@@ -13,6 +13,8 @@ Both the systems have independent MOOS and BHV Source to communicate and transfe
 ATON framework written for testing is been shared here for students/researchers to gain more knowledge and these code helps to connect the commands from MOOS IVP and Control the thrusters accordingly 
 
 Raspberry pi and Arduino Mega Been Used along with Topside Intel NUC With Blue Robotics ROV System 
+
+Cloudonomous - Cloud Integration with ATON - MOOS IVP compliments for remote piloting and Autonomy Control through AWS Cloud and Details of the AWS Cloud furnished on the video link given below 
 
 Pls feel free to reach us to know more at one2one@arobot.in 
 
